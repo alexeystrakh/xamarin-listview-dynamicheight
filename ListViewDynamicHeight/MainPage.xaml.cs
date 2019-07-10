@@ -16,6 +16,7 @@ namespace ListViewDynamicHeight
         public MainPage()
         {
             InitializeComponent();
+            MyListView.ItemsSource = new[] { "1", "2", "3" };
         }
     }
 }

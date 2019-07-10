@@ -51,7 +51,7 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.1.0.483098-pre1" />
+    <PackageReference Include="Xamarin.Forms" Version="4.1.0.581479" />
     <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0.1" />
     <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="28.0.0.1" />
     <PackageReference Include="Xamarin.Android.Support.v4" Version="28.0.0.1" />
@@ -98,7 +98,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ListViewDynamicHeight\ListViewDynamicHeight.csproj">
-      <Project>{04CE58B7-D5A2-4900-A686-A51A650233D3}</Project>
+      <Project>{4A98C5F7-1430-4F72-A5EF-11C91DEAE782}</Project>
       <Name>ListViewDynamicHeight</Name>
     </ProjectReference>
   </ItemGroup>

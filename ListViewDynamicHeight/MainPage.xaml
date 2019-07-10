@@ -6,11 +6,33 @@
              mc:Ignorable="d"
              x:Class="ListViewDynamicHeight.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+     <StackLayout BackgroundColor="Olive">
+        <ListView x:Name="MyListView" 
+                  BackgroundColor="Fuchsia"
+                  HasUnevenRows="false">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Label Text="Item X"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"
+                               BackgroundColor="Green"
+                               />
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.Footer>
+                <Grid BackgroundColor="Green">
+                     <Label Text="ListView Footer" />
+                </Grid>
+            </ListView.Footer>
+        </ListView>
+        <Grid HeightRequest="100"
+              BackgroundColor="Red" 
+              VerticalOptions="FillAndExpand" 
+              HorizontalOptions="FillAndExpand">
+            <Label Text="Content which should go below the ListView" />
+        </Grid>
     </StackLayout>
 
 </ContentPage>
