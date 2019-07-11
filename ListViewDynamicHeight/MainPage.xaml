@@ -21,25 +21,29 @@
         <vms:MyViewModel />
     </ContentPage.BindingContext>
 
-    <StackLayout>
+    <FlexLayout Direction="Column">
+
         <Label Text="Control Before List" />
-    <ListView x:Name="MyListView" 
-              BackgroundColor="Fuschia"
-              HasUnevenRows="true"
-              ItemTemplate="{StaticResource MyListViewItemTemplateSelector}"
-              ItemsSource="{Binding MyItems}">
-         <ListView.Header>
-            <Grid BackgroundColor="Purple">
-                 <Label Text="ListView Header" />
-            </Grid>
-        </ListView.Header>
-        <ListView.Footer>
-            <Grid BackgroundColor="Purple">
-                 <Label Text="ListView Footer" />
-            </Grid>
-        </ListView.Footer>
-    </ListView>
+
+        <ListView x:Name="MyListView" 
+                  BackgroundColor="Fuschia"
+                  HasUnevenRows="true"
+                  ItemTemplate="{StaticResource MyListViewItemTemplateSelector}"
+                  ItemsSource="{Binding MyItems}">
+             <ListView.Header>
+                <Grid BackgroundColor="Purple">
+                     <Label Text="ListView Header" />
+                </Grid>
+            </ListView.Header>
+            <ListView.Footer>
+                <Grid BackgroundColor="Purple">
+                     <Label Text="ListView Footer" />
+                </Grid>
+            </ListView.Footer>
+        </ListView>
+
         <Label Text="Control After List" />
-    </StackLayout>
+
+    </FlexLayout>
 
 </ContentPage>
