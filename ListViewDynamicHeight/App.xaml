@@ -6,6 +6,41 @@
              mc:Ignorable="d"
              x:Class="ListViewDynamicHeight.App">
     <Application.Resources>
-
+        <DataTemplate x:Key="A50Template">
+            <ViewCell>
+                <Label Text="{Binding Title}"
+                       VerticalOptions="FillAndExpand"
+                       HorizontalOptions="FillAndExpand"
+                       VerticalTextAlignment="Center"
+                       HorizontalTextAlignment="Center"
+                       HeightRequest="50"
+                       BackgroundColor="Orange"
+                       />
+            </ViewCell> 
+        </DataTemplate>
+        <DataTemplate x:Key="A100Template">
+            <ViewCell>
+                <Label Text="{Binding Title}"
+                       VerticalOptions="FillAndExpand"
+                       HorizontalOptions="FillAndExpand"
+                       VerticalTextAlignment="Center"
+                       HorizontalTextAlignment="Center"
+                       HeightRequest="100"
+                       BackgroundColor="Gray"
+                       />
+            </ViewCell>
+        </DataTemplate>
+        <DataTemplate x:Key="A150Template">
+            <ViewCell>
+                <Label Text="{Binding Title}"
+                       VerticalOptions="FillAndExpand"
+                       HorizontalOptions="FillAndExpand"
+                       VerticalTextAlignment="Center"
+                       HorizontalTextAlignment="Center"
+                       BackgroundColor="Brown"
+                       HeightRequest="150"
+                       />
+            </ViewCell>
+        </DataTemplate>
     </Application.Resources>
 </Application>

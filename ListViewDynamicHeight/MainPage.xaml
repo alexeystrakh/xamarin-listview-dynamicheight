@@ -3,36 +3,43 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:rainbows="clr-namespace:Xamarin.Forms.DebugRainbows;assembly=Xamarin.Forms.DebugRainbows" 
+             xmlns:vms="clr-namespace:ListViewDynamicHeight.ViewModels"
+             xmlns:selectors="clr-namespace:ListViewDynamicHeight.Selectors"
              mc:Ignorable="d"
-             x:Class="ListViewDynamicHeight.MainPage">
+             x:Class="ListViewDynamicHeight.MainPage"
+             ios:Page.UseSafeArea="true"
+             rainbows:DebugRainbow.IsDebug="true"
+             BackgroundColor="Lime">
 
-     <StackLayout BackgroundColor="Olive">
+    <ContentPage.Resources>
+        <selectors:MyListViewItemTemplateSelector x:Key="MyListViewItemTemplateSelector" />
+    </ContentPage.Resources>
+    
+    <ContentPage.BindingContext>
+        <vms:MyViewModel />
+    </ContentPage.BindingContext>
+    
+    <StackLayout>
+        <Label Text="Control Before List" />
         <ListView x:Name="MyListView" 
-                  BackgroundColor="Fuchsia"
-                  HasUnevenRows="false">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Label Text="Item X"
-                               VerticalOptions="Center"
-                               HorizontalOptions="Center"
-                               BackgroundColor="Green"
-                               />
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
+                  BackgroundColor="Fuschia"
+                  HasUnevenRows="true"
+                  ItemTemplate="{StaticResource MyListViewItemTemplateSelector}"
+                  ItemsSource="{Binding MyItems}">
+             <ListView.Header>
+                <Grid BackgroundColor="Purple">
+                     <Label Text="ListView Header" />
+                </Grid>
+            </ListView.Header>
             <ListView.Footer>
-                <Grid BackgroundColor="Green">
+                <Grid BackgroundColor="Purple">
                      <Label Text="ListView Footer" />
                 </Grid>
             </ListView.Footer>
         </ListView>
-        <Grid HeightRequest="100"
-              BackgroundColor="Red" 
-              VerticalOptions="FillAndExpand" 
-              HorizontalOptions="FillAndExpand">
-            <Label Text="Content which should go below the ListView" />
-        </Grid>
+        <Label Text="Control After List" />
     </StackLayout>
 
 </ContentPage>
