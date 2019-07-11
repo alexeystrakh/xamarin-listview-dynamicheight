@@ -10,7 +10,7 @@
              mc:Ignorable="d"
              x:Class="ListViewDynamicHeight.MainPage"
              ios:Page.UseSafeArea="true"
-             rainbows:DebugRainbow.IsDebug="true"
+             rainbows:DebugRainbow.IsDebug="false"
              BackgroundColor="Lime">
 
     <ContentPage.Resources>
@@ -20,25 +20,25 @@
     <ContentPage.BindingContext>
         <vms:MyViewModel />
     </ContentPage.BindingContext>
-    
+
     <StackLayout>
         <Label Text="Control Before List" />
-        <ListView x:Name="MyListView" 
-                  BackgroundColor="Fuschia"
-                  HasUnevenRows="true"
-                  ItemTemplate="{StaticResource MyListViewItemTemplateSelector}"
-                  ItemsSource="{Binding MyItems}">
-             <ListView.Header>
-                <Grid BackgroundColor="Purple">
-                     <Label Text="ListView Header" />
-                </Grid>
-            </ListView.Header>
-            <ListView.Footer>
-                <Grid BackgroundColor="Purple">
-                     <Label Text="ListView Footer" />
-                </Grid>
-            </ListView.Footer>
-        </ListView>
+    <ListView x:Name="MyListView" 
+              BackgroundColor="Fuschia"
+              HasUnevenRows="true"
+              ItemTemplate="{StaticResource MyListViewItemTemplateSelector}"
+              ItemsSource="{Binding MyItems}">
+         <ListView.Header>
+            <Grid BackgroundColor="Purple">
+                 <Label Text="ListView Header" />
+            </Grid>
+        </ListView.Header>
+        <ListView.Footer>
+            <Grid BackgroundColor="Purple">
+                 <Label Text="ListView Footer" />
+            </Grid>
+        </ListView.Footer>
+    </ListView>
         <Label Text="Control After List" />
     </StackLayout>
 
