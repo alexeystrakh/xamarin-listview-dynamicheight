@@ -25,22 +25,14 @@
 
         <Label Text="Control Before List" />
 
-        <ListView x:Name="MyListView" 
+        <CollectionView x:Name="MyListView" 
                   BackgroundColor="Fuschia"
-                  HasUnevenRows="true"
-                  ItemTemplate="{StaticResource MyListViewItemTemplateSelector}"
-                  ItemsSource="{Binding MyItems}">
-             <ListView.Header>
-                <Grid BackgroundColor="Purple">
-                     <Label Text="ListView Header" />
-                </Grid>
-            </ListView.Header>
-            <ListView.Footer>
-                <Grid BackgroundColor="Purple">
-                     <Label Text="ListView Footer" />
-                </Grid>
-            </ListView.Footer>
-        </ListView>
+                  ItemsSource="{Binding MyItems}"
+                  FlexLayout.Grow="1">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="1" />
+            </CollectionView.ItemsLayout>
+        </CollectionView>
 
         <Label Text="Control After List" />
 
